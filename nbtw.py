@@ -5,7 +5,7 @@ def get_nbtws(A,k):
     # k: int (>= 0)
     assert len(A.shape) == 2 and A.shape[0] == A.shape[1]
     assert np.allclose(A.T,A)
-    assert k >= 1
+    assert k >= 0
     if k == 0:
         return np.identity(A.shape[0]) # one self-walk of length 0 by definition
     if k == 1:
