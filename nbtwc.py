@@ -2,9 +2,10 @@ import numpy as np
 
 def get_nbtw_centrality(A,k):
     # A: numpy matrix
-    # k: int (natural)
+    # k: int (>= 1)
     assert len(A.shape) == 2 and A.shape[0] == A.shape[1]
     assert np.allclose(A.T,A)
+    assert k >= 1
     if k == 1:
         return A
     D = np.diag(np.matmul(A,np.ones(A.shape[0])))
